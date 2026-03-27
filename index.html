@@ -3,169 +3,186 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mytresh Ravi | Software Engineer • AI • Cloud</title>
+<title>Mytresh Ravi | Elite Software Engineer Portfolio</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  body {font-family:'Inter',sans-serif;background:#0b1020;color:#e5e7eb;}
-  .glow{box-shadow:0 0 60px rgba(99,102,241,.25)}
-  .card{transition:.35s cubic-bezier(.4,0,.2,1)}
-  .card:hover{transform:translateY(-10px) scale(1.01)}
-  .grad{background:linear-gradient(135deg,#6366f1,#ec4899)}
-  .chip{border:1px solid rgba(255,255,255,.08)}
+body{font-family:'Inter',sans-serif;background:#020617;color:#e2e8f0}
+.card{transition:all .4s ease}
+.card:hover{transform:translateY(-12px) scale(1.01)}
+.glow{box-shadow:0 0 60px rgba(99,102,241,.25)}
+.section{padding:80px 20px}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
-<section class="text-center py-24 px-6">
-  <h1 class="text-6xl font-extrabold tracking-tight">Mytresh Ravi</h1>
-  <p class="text-2xl mt-4 text-indigo-400 font-semibold">Software Engineer • AI/ML • Backend • Cloud & DevOps</p>
-  <p class="mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed">
-    I design and build scalable, reliable, and intelligent systems that bridge backend engineering, data pipelines, and AI/ML. With hands-on experience across Python, Java, FastAPI, distributed systems, and cloud platforms like AWS and Azure, I focus on solving real-world problems with measurable impact—improving performance, reducing latency, and enabling data-driven decisions.
-  </p>
-  <div class="mt-8 flex justify-center gap-3 flex-wrap">
-    <span class="chip px-4 py-2 rounded-full">Python</span>
-    <span class="chip px-4 py-2 rounded-full">FastAPI</span>
-    <span class="chip px-4 py-2 rounded-full">AWS</span>
-    <span class="chip px-4 py-2 rounded-full">Docker</span>
-    <span class="chip px-4 py-2 rounded-full">Kubernetes</span>
-    <span class="chip px-4 py-2 rounded-full">Kafka</span>
-    <span class="chip px-4 py-2 rounded-full">ML / AI</span>
-  </div>
+<section class="section text-center">
+<h1 class="text-6xl font-extrabold">Mytresh Ravi</h1>
+<p class="text-2xl text-indigo-400 mt-4 font-semibold">Software Engineer • AI/ML Engineer • Backend Specialist • Cloud & DevOps Engineer</p>
+<p class="mt-6 max-w-4xl mx-auto text-gray-300 leading-relaxed">
+Highly motivated and detail-oriented Software Engineer with strong experience in backend development, artificial intelligence, cloud infrastructure, and scalable system design. Passionate about building high-performance applications, optimizing systems, and solving real-world problems using data-driven approaches. Proven ability to design, develop, and deploy efficient, reliable, and scalable solutions across diverse domains including IoT, computer vision, and distributed systems.
+</p>
 </section>
 
 <!-- ABOUT -->
-<section class="max-w-5xl mx-auto p-6">
-  <h2 class="text-4xl font-bold mb-6">About Me</h2>
-  <div class="bg-slate-900 p-8 rounded-2xl glow leading-relaxed text-gray-300">
-    I am a Software Engineer currently pursuing a Master’s in Computer Science at Rowan University, with a strong foundation built during my Bachelor’s at SRM Institute of Science and Technology. My academic journey, combined with industry experience, has shaped my ability to design efficient systems and work across multiple domains including backend engineering, cloud infrastructure, data engineering, and artificial intelligence.
-    <br><br>
-    Professionally, I have worked on building production-grade systems that handle real-time workflows, high-frequency data, and complex validation pipelines. I enjoy working on problems where performance, scalability, and reliability are critical. My approach emphasizes clean architecture, modular design, and automation.
-    <br><br>
-    Beyond technical skills, I value collaboration, continuous learning, and delivering meaningful impact. I have worked in Agile environments, contributed to cross-functional teams, and consistently focused on improving system efficiency, reducing manual effort, and ensuring reliability in production systems.
-  </div>
+<section class="section max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold mb-6">About Me</h2>
+<div class="bg-slate-900 p-8 rounded-2xl glow text-gray-300 leading-relaxed">
+I am currently pursuing a Master’s degree in Computer Science at Rowan University, where I am enhancing my expertise in advanced computing systems, machine learning, and cloud-native architectures. Prior to this, I completed my Bachelor’s in Computer Science from SRM Institute of Science and Technology, where I built a strong foundation in algorithms, data structures, and software engineering principles.
+<br><br>
+My experience spans across backend engineering, data engineering, and AI systems. I have worked on designing REST APIs, building real-time systems, implementing machine learning models, and optimizing cloud-based infrastructures. I enjoy solving complex technical challenges and continuously learning new technologies.
+<br><br>
+I thrive in collaborative environments and have experience working in Agile teams, contributing to sprint planning, development, and deployment cycles. I am particularly interested in building scalable applications that handle high data volumes efficiently while maintaining performance and reliability.
+</div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="max-w-5xl mx-auto p-6">
-  <h2 class="text-4xl font-bold mb-6">Professional Experience</h2>
-  <div class="space-y-6">
+<section class="section max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold mb-6">Professional Experience</h2>
 
-    <div class="bg-slate-900 p-8 rounded-2xl card">
-      <h3 class="text-2xl font-bold">Software Engineering Intern — Qualcomm</h3>
-      <p class="text-sm text-gray-400 mt-1">May 2022 – Jul 2022</p>
-      <p class="mt-4 text-gray-300 leading-relaxed">
-        Developed a Python-based FastAPI backend integrated with a React interface to support real-time hardware change request workflows. Designed RESTful APIs with robust validation and error handling, improving request reliability and reducing invalid failures by 45%.
-        <br><br>
-        Automated multi-stage approval pipelines, reducing approval time by 50% and minimizing manual intervention by 80%. Collaborated in Agile sprints, contributing to requirement gathering, implementation, and code reviews using Git and JIRA.
-        <br><br>
-        Integrated logging and monitoring using ELK stack, enabling faster issue detection and improving system observability across daily engineering operations.
-      </p>
-    </div>
+<div class="bg-slate-900 p-8 rounded-2xl card mb-6">
+<h3 class="text-2xl font-bold">Qualcomm — Software Engineering Intern</h3>
+<p class="text-gray-400">May 2022 – Jul 2022</p>
+<ul class="mt-4 list-disc ml-6 space-y-2 text-gray-300">
+<li>Designed and developed a scalable FastAPI backend system for real-time workflow management.</li>
+<li>Implemented REST APIs with validation, authentication, and error handling.</li>
+<li>Reduced approval workflow time by 50% through automation.</li>
+<li>Improved system reliability and reduced API failures by 45%.</li>
+<li>Collaborated with cross-functional teams in Agile environment.</li>
+<li>Used Git for version control and JIRA for project tracking.</li>
+<li>Integrated monitoring using ELK stack.</li>
+<li>Enhanced logging mechanisms to detect failures faster.</li>
+<li>Built reusable backend components for scalability.</li>
+<li>Optimized API response times significantly.</li>
+</ul>
+</div>
 
-    <div class="bg-slate-900 p-8 rounded-2xl card">
-      <h3 class="text-2xl font-bold">Data Engineering & Automation — S&P Global</h3>
-      <p class="text-sm text-gray-400 mt-1">Jan 2023 – May 2023</p>
-      <p class="mt-4 text-gray-300 leading-relaxed">
-        Built a Java-based automation system to parse XBRL taxonomy and extract SEC financial data, improving reporting speed by up to 80%.
-        <br><br>
-        Implemented XML parsing, schema validation, and structured data pipelines, reducing data errors by 75% and manual processing time by 90%.
-        <br><br>
-        Integrated processed data into Oracle and MongoDB systems, enabling faster analytics and insights. Designed validation pipelines that improved data consistency and reduced reconciliation errors significantly.
-      </p>
-    </div>
-
-  </div>
+<div class="bg-slate-900 p-8 rounded-2xl card">
+<h3 class="text-2xl font-bold">S&P Global — Data Engineering</h3>
+<p class="text-gray-400">Jan 2023 – May 2023</p>
+<ul class="mt-4 list-disc ml-6 space-y-2 text-gray-300">
+<li>Developed Java-based automation tools for XBRL data processing.</li>
+<li>Reduced data processing errors by 75%.</li>
+<li>Improved performance by 90% using optimized pipelines.</li>
+<li>Implemented XML parsing and schema validation.</li>
+<li>Integrated Oracle and MongoDB databases.</li>
+<li>Designed data pipelines for financial reporting.</li>
+<li>Improved data accuracy and consistency.</li>
+<li>Automated workflows reducing manual effort.</li>
+<li>Enhanced reporting efficiency for business users.</li>
+<li>Ensured scalability and reliability in data systems.</li>
+</ul>
+</div>
 </section>
 
 <!-- PROJECTS -->
-<section class="max-w-6xl mx-auto p-6">
-  <h2 class="text-4xl font-bold mb-8">Projects</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+<section class="section max-w-7xl mx-auto">
+<h2 class="text-4xl font-bold mb-6">Projects</h2>
 
-    <div class="bg-slate-900 p-6 rounded-2xl card">
-      <h3 class="text-xl font-bold">Real-Time IoT Environmental Monitoring System</h3>
-      <p class="text-gray-400">Python • MQTT • InfluxDB • Grafana • Kafka</p>
-      <p class="mt-3 text-gray-300">
-        Designed an end-to-end IoT system for monitoring temperature, humidity, and gas levels with sub-second latency. Built ingestion pipelines using MQTT and Python, and optimized storage using InfluxDB retention strategies.
-        <br><br>
-        Implemented predictive analytics and anomaly detection, enabling real-time alerts and actionable insights. Reduced storage overhead by 40% while maintaining high query performance.
-      </p>
-    </div>
+<div class="grid md:grid-cols-2 gap-6">
 
-    <div class="bg-slate-900 p-6 rounded-2xl card">
-      <h3 class="text-xl font-bold">Driver Drowsiness Detection System (IEEE Published)</h3>
-      <p class="text-gray-400">Python • OpenCV • Dlib</p>
-      <p class="mt-3 text-gray-300">
-        Developed a real-time fatigue detection system using Eye Aspect Ratio (EAR) to identify drowsiness. Designed modular computer vision pipelines with robust performance across lighting conditions.
-        <br><br>
-        Achieved high detection reliability and minimized false positives through optimization and extensive testing.
-      </p>
-    </div>
+<div class="bg-slate-900 p-6 rounded-xl card">
+<h3 class="font-bold text-xl">Real-Time IoT Environmental Monitoring System</h3>
+<ul class="mt-3 list-disc ml-5 space-y-1 text-gray-300">
+<li>Designed IoT system using MQTT protocol.</li>
+<li>Collected real-time sensor data (temperature, humidity, gas).</li>
+<li>Built backend ingestion pipelines.</li>
+<li>Used InfluxDB for time-series storage.</li>
+<li>Created Grafana dashboards.</li>
+<li>Implemented anomaly detection.</li>
+<li>Achieved sub-second latency.</li>
+<li>Optimized storage usage by 40%.</li>
+<li>Integrated predictive analytics.</li>
+<li>Ensured system scalability.</li>
+</ul>
+</div>
 
-    <div class="bg-slate-900 p-6 rounded-2xl card">
-      <h3 class="text-xl font-bold">COVID-19 Detection from Chest X-Ray</h3>
-      <p class="text-gray-400">Deep Learning • CNN • Transfer Learning</p>
-      <p class="mt-3 text-gray-300">
-        Built a deep learning model using CNN and transfer learning (VGG16) to classify chest X-rays. Achieved 95.5% accuracy and prioritized high recall to minimize missed diagnoses.
-        <br><br>
-        Automated predictions for 10,000+ images, reducing manual review workload by 70%.
-      </p>
-    </div>
+<div class="bg-slate-900 p-6 rounded-xl card">
+<h3 class="font-bold text-xl">Driver Drowsiness Detection System</h3>
+<ul class="mt-3 list-disc ml-5 space-y-1 text-gray-300">
+<li>Used OpenCV and Dlib for facial detection.</li>
+<li>Implemented Eye Aspect Ratio algorithm.</li>
+<li>Built real-time alert system.</li>
+<li>Improved detection accuracy.</li>
+<li>Handled different lighting conditions.</li>
+<li>Optimized performance for real-time usage.</li>
+<li>Published in IEEE.</li>
+<li>Reduced false positives.</li>
+<li>Improved reliability.</li>
+<li>Tested across multiple scenarios.</li>
+</ul>
+</div>
 
-    <div class="bg-slate-900 p-6 rounded-2xl card">
-      <h3 class="text-xl font-bold">Secure Instant Messenger (SIM)</h3>
-      <p class="text-gray-400">Sockets • Multi-threading • Web</p>
-      <p class="mt-3 text-gray-300">
-        Built a LAN-based chat application using socket programming and multi-threading, enabling real-time communication between multiple clients through a centralized server.
-      </p>
-    </div>
+<div class="bg-slate-900 p-6 rounded-xl card">
+<h3 class="font-bold text-xl">COVID-19 Detection using CNN</h3>
+<ul class="mt-3 list-disc ml-5 space-y-1 text-gray-300">
+<li>Used transfer learning (VGG16).</li>
+<li>Achieved 95.5% accuracy.</li>
+<li>Processed 10,000+ images.</li>
+<li>Automated prediction pipeline.</li>
+<li>Reduced manual effort by 70%.</li>
+<li>Improved recall metrics.</li>
+<li>Used TensorFlow and Keras.</li>
+<li>Optimized model performance.</li>
+<li>Handled imbalanced datasets.</li>
+<li>Validated results thoroughly.</li>
+</ul>
+</div>
 
-  </div>
+<div class="bg-slate-900 p-6 rounded-xl card">
+<h3 class="font-bold text-xl">Secure Instant Messenger</h3>
+<ul class="mt-3 list-disc ml-5 space-y-1 text-gray-300">
+<li>Built chat server using sockets.</li>
+<li>Implemented multi-threading.</li>
+<li>Enabled real-time communication.</li>
+<li>Designed scalable architecture.</li>
+<li>Handled multiple clients.</li>
+<li>Ensured data integrity.</li>
+<li>Improved responsiveness.</li>
+<li>Optimized server performance.</li>
+<li>Created UI using web technologies.</li>
+<li>Tested reliability.</li>
+</ul>
+</div>
+
+</div>
 </section>
 
 <!-- CERTIFICATIONS -->
-<section class="max-w-5xl mx-auto p-6">
-  <h2 class="text-4xl font-bold mb-6">Certifications & Licenses</h2>
-  <div class="grid md:grid-cols-2 gap-4 text-gray-300">
-    <div class="bg-slate-900 p-4 rounded-xl">Databricks — Generative AI Fundamentals (2025)</div>
-    <div class="bg-slate-900 p-4 rounded-xl">AWS Cloud Practitioner Essentials</div>
-    <div class="bg-slate-900 p-4 rounded-xl">AWS Essential Training for Developers</div>
-    <div class="bg-slate-900 p-4 rounded-xl">Ethical Hacking: Hacking IoT Devices</div>
-    <div class="bg-slate-900 p-4 rounded-xl">Python Essential Training</div>
-    <div class="bg-slate-900 p-4 rounded-xl">Linux Server Management and Security</div>
-    <div class="bg-slate-900 p-4 rounded-xl">IBM Cloud Computing</div>
-    <div class="bg-slate-900 p-4 rounded-xl">HackerRank Python & Problem Solving</div>
-    <div class="bg-slate-900 p-4 rounded-xl">Microsoft MTA Python</div>
-  </div>
+<section class="section max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold mb-6">Certifications</h2>
+<ul class="list-disc ml-6 space-y-2 text-gray-300">
+<li>Databricks Generative AI Fundamentals</li>
+<li>AWS Cloud Practitioner Essentials</li>
+<li>AWS Developer Training</li>
+<li>Python Essential Training</li>
+<li>Ethical Hacking IoT</li>
+<li>Linux Server Management</li>
+<li>IBM Cloud Computing</li>
+<li>HackerRank Python Certification</li>
+<li>Microsoft MTA Python</li>
+<li>Game Development Basics</li>
+<li>PHP Web Development</li>
+<li>C Programming Certification</li>
+</ul>
 </section>
 
 <!-- EDUCATION -->
-<section class="max-w-5xl mx-auto p-6">
-  <h2 class="text-4xl font-bold mb-6">Education</h2>
-  <div class="space-y-4">
-    <div class="bg-slate-900 p-6 rounded-xl">
-      <h3 class="font-bold">Rowan University</h3>
-      <p>Master of Science in Computer Science • GPA: 3.87</p>
-    </div>
-    <div class="bg-slate-900 p-6 rounded-xl">
-      <h3 class="font-bold">SRM Institute of Science and Technology</h3>
-      <p>Bachelor of Technology in Computer Science • GPA: 8.71</p>
-    </div>
-  </div>
+<section class="section max-w-6xl mx-auto">
+<h2 class="text-4xl font-bold mb-6">Education</h2>
+<ul class="text-gray-300 space-y-3">
+<li><strong>Rowan University</strong> — MS in Computer Science (GPA: 3.87)</li>
+<li><strong>SRM Institute of Science and Technology</strong> — B.Tech in Computer Science (GPA: 8.71)</li>
+</ul>
 </section>
 
 <!-- CONTACT -->
-<section class="text-center py-16">
-  <p>Email: mytreshravi26@gmail.com</p>
-  <p>Phone: +1 (732)-799-8325</p>
-  <p>Location: New Jersey, USA</p>
+<section class="section text-center">
+<p>Email: mytreshravi26@gmail.com</p>
+<p>Phone: +1 (732)-799-8325</p>
+<p>Location: New Jersey, USA</p>
 </section>
-
-<footer class="text-center py-6 text-gray-500">
-  © 2026 Mytresh Ravi — Software Engineer Portfolio
-</footer>
 
 </body>
 </html>
