@@ -1,474 +1,171 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Mytresh Ravi | DevOps • Site Reliability • Cloud Engineer</title>
-
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    .font-heading { font-family: 'Syne', sans-serif; }
-    .font-body { font-family: 'Inter', sans-serif; }
-
-    .gradient-text {
-      background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .card-hover:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-    }
-
-    .nav-link { position: relative; }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-action);
-      transition: width .3s ease;
-    }
-
-    .nav-link:hover::after { width: 100%; }
-
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(100px);
-      opacity: 0.35;
-      animation: blob 10s infinite;
-    }
-
-    @keyframes blob {
-      0%,100% { transform: translate(0,0) scale(1); }
-      50% { transform: translate(40px,-20px) scale(1.15); }
-    }
-
-    section { scroll-margin-top: 90px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mytresh Ravi | Software Engineer • AI • Cloud</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body {font-family:'Inter',sans-serif;background:#0b1020;color:#e5e7eb;}
+  .glow{box-shadow:0 0 60px rgba(99,102,241,.25)}
+  .card{transition:.35s cubic-bezier(.4,0,.2,1)}
+  .card:hover{transform:translateY(-10px) scale(1.01)}
+  .grad{background:linear-gradient(135deg,#6366f1,#ec4899)}
+  .chip{border:1px solid rgba(255,255,255,.08)}
+</style>
 </head>
+<body>
 
-<body class="h-full font-body overflow-auto"
-      style="background-color: var(--background); color: var(--text);">
-
-<div class="blob w-96 h-96 top-0 left-0"
-     style="background: var(--primary-action);"></div>
-
-<div class="blob w-80 h-80 bottom-0 right-0"
-     style="background: var(--secondary-action);"></div>
-
-<!-- ================= NAVIGATION ================= -->
-
-<nav class="fixed top-0 left-0 right-0 backdrop-blur-xl border-b z-50"
-     style="background: var(--background); border-color: var(--secondary-surface);">
-
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-
-    <a href="#hero"
-       class="font-heading font-bold text-2xl"
-       style="color: var(--primary-action);">
-       MR
-    </a>
-
-    <div class="flex gap-8 text-sm">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </div>
-
-  </div>
-</nav>
-
-<!-- ================= HERO ================= -->
-
-<section id="hero"
-         class="min-h-screen flex items-center justify-center px-6 text-center">
-
-  <div class="max-w-4xl">
-
-    <h1 class="font-heading font-bold text-6xl mb-4">
-        Mytresh Ravi
-    </h1>
-
-    <p class="text-2xl gradient-text font-heading font-semibold mb-4">
-       DevOps • Site Reliability • Cloud Engineer
-    </p>
-
-    <p class="text-lg opacity-70">
-       Designing resilient cloud-native systems, improving reliability,
-       and scaling infrastructure through automation
-    </p>
-
+<!-- HERO -->
+<section class="text-center py-24 px-6">
+  <h1 class="text-6xl font-extrabold tracking-tight">Mytresh Ravi</h1>
+  <p class="text-2xl mt-4 text-indigo-400 font-semibold">Software Engineer • AI/ML • Backend • Cloud & DevOps</p>
+  <p class="mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed">
+    I design and build scalable, reliable, and intelligent systems that bridge backend engineering, data pipelines, and AI/ML. With hands-on experience across Python, Java, FastAPI, distributed systems, and cloud platforms like AWS and Azure, I focus on solving real-world problems with measurable impact—improving performance, reducing latency, and enabling data-driven decisions.
+  </p>
+  <div class="mt-8 flex justify-center gap-3 flex-wrap">
+    <span class="chip px-4 py-2 rounded-full">Python</span>
+    <span class="chip px-4 py-2 rounded-full">FastAPI</span>
+    <span class="chip px-4 py-2 rounded-full">AWS</span>
+    <span class="chip px-4 py-2 rounded-full">Docker</span>
+    <span class="chip px-4 py-2 rounded-full">Kubernetes</span>
+    <span class="chip px-4 py-2 rounded-full">Kafka</span>
+    <span class="chip px-4 py-2 rounded-full">ML / AI</span>
   </div>
 </section>
 
-<!-- ================= ABOUT ================= -->
+<!-- ABOUT -->
+<section class="max-w-5xl mx-auto p-6">
+  <h2 class="text-4xl font-bold mb-6">About Me</h2>
+  <div class="bg-slate-900 p-8 rounded-2xl glow leading-relaxed text-gray-300">
+    I am a Software Engineer currently pursuing a Master’s in Computer Science at Rowan University, with a strong foundation built during my Bachelor’s at SRM Institute of Science and Technology. My academic journey, combined with industry experience, has shaped my ability to design efficient systems and work across multiple domains including backend engineering, cloud infrastructure, data engineering, and artificial intelligence.
+    <br><br>
+    Professionally, I have worked on building production-grade systems that handle real-time workflows, high-frequency data, and complex validation pipelines. I enjoy working on problems where performance, scalability, and reliability are critical. My approach emphasizes clean architecture, modular design, and automation.
+    <br><br>
+    Beyond technical skills, I value collaboration, continuous learning, and delivering meaningful impact. I have worked in Agile environments, contributed to cross-functional teams, and consistently focused on improving system efficiency, reducing manual effort, and ensuring reliability in production systems.
+  </div>
+</section>
 
-<section id="about" class="py-24 px-6">
+<!-- EXPERIENCE -->
+<section class="max-w-5xl mx-auto p-6">
+  <h2 class="text-4xl font-bold mb-6">Professional Experience</h2>
+  <div class="space-y-6">
 
-  <div class="max-w-5xl mx-auto">
+    <div class="bg-slate-900 p-8 rounded-2xl card">
+      <h3 class="text-2xl font-bold">Software Engineering Intern — Qualcomm</h3>
+      <p class="text-sm text-gray-400 mt-1">May 2022 – Jul 2022</p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Developed a Python-based FastAPI backend integrated with a React interface to support real-time hardware change request workflows. Designed RESTful APIs with robust validation and error handling, improving request reliability and reducing invalid failures by 45%.
+        <br><br>
+        Automated multi-stage approval pipelines, reducing approval time by 50% and minimizing manual intervention by 80%. Collaborated in Agile sprints, contributing to requirement gathering, implementation, and code reviews using Git and JIRA.
+        <br><br>
+        Integrated logging and monitoring using ELK stack, enabling faster issue detection and improving system observability across daily engineering operations.
+      </p>
+    </div>
 
-    <h2 class="font-heading font-bold text-4xl mb-12 text-center">
-      About <span class="gradient-text">Me</span>
-    </h2>
-
-    <div class="card-hover rounded-3xl p-10"
-         style="background: var(--secondary-surface);">
-
-      DevOps / Site Reliability Engineer with 4 years of experience designing,
-      deploying, and operating highly available cloud-native systems on AWS
-      and Kubernetes. Strong expertise in infrastructure automation, CI/CD,
-      monitoring & observability, disaster recovery, and incident response.
-      Proven ability to improve availability, reduce MTTR, and support
-      production systems under real-world operational constraints.
-
+    <div class="bg-slate-900 p-8 rounded-2xl card">
+      <h3 class="text-2xl font-bold">Data Engineering & Automation — S&P Global</h3>
+      <p class="text-sm text-gray-400 mt-1">Jan 2023 – May 2023</p>
+      <p class="mt-4 text-gray-300 leading-relaxed">
+        Built a Java-based automation system to parse XBRL taxonomy and extract SEC financial data, improving reporting speed by up to 80%.
+        <br><br>
+        Implemented XML parsing, schema validation, and structured data pipelines, reducing data errors by 75% and manual processing time by 90%.
+        <br><br>
+        Integrated processed data into Oracle and MongoDB systems, enabling faster analytics and insights. Designed validation pipelines that improved data consistency and reduced reconciliation errors significantly.
+      </p>
     </div>
 
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- PROJECTS -->
+<section class="max-w-6xl mx-auto p-6">
+  <h2 class="text-4xl font-bold mb-8">Projects</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
 
-<section id="experience" class="py-24 px-6">
-
-  <div class="max-w-5xl mx-auto">
-
-    <h2 class="font-heading font-bold text-4xl mb-12 text-center">
-      Professional <span class="gradient-text">Experience</span>
-    </h2>
-
-    <div class="space-y-10">
-
-      <!-- Xoriant -->
-      <div class="card-hover rounded-3xl p-10"
-           style="background: var(--secondary-surface);">
-
-        <h3 class="font-heading font-bold text-2xl mb-2">
-          Site Reliability Engineer — Xoriant Solutions
-        </h3>
-
-        <p class="text-sm opacity-60 mb-6">
-          Jun 2024 – Jan 2026
-        </p>
-
-        <div class="space-y-3 opacity-80 leading-relaxed text-sm">
-
-          <p>
-            Led cloud infrastructure migration and modernization initiatives,
-            improving platform resilience and fault tolerance. Redesigned
-            critical workloads resulting in a 35% increase in system availability
-            and a 40% reduction in unplanned downtime.
-          </p>
-
-          <p>
-            Designed and implemented Jenkins-based CI/CD pipelines integrated
-            with Git workflows, reducing release cycles by 50% and minimizing
-            deployment-related production incidents.
-          </p>
-
-          <p>
-            Managed containerized workloads using Docker and Kubernetes,
-            optimizing resource utilization and deployment reliability across
-            multiple environments.
-          </p>
-
-          <p>
-            Executed disaster recovery validation strategies including failover
-            drills and chaos testing, reducing MTTR by 50% and validating
-            end-to-end recovery workflows.
-          </p>
-
-        </div>
-      </div>
-
-      <!-- Synectiks -->
-      <div class="card-hover rounded-3xl p-10"
-           style="background: var(--secondary-surface);">
-
-        <h3 class="font-heading font-bold text-2xl mb-2">
-          DevOps Engineer — Synectiks
-        </h3>
-
-        <p class="text-sm opacity-60 mb-6">
-          Jan 2020 – Nov 2023
-        </p>
-
-        <div class="space-y-3 opacity-80 leading-relaxed text-sm">
-
-          <p>
-            Designed, deployed, and operated AWS-based cloud infrastructure supporting
-            more than 50 microservices across development, staging, and production
-            environments, emphasizing high availability and horizontal scalability.
-          </p>
-
-          <p>
-            Built infrastructure automation workflows using Terraform and Ansible,
-            eliminating approximately 70% of manual provisioning tasks and improving
-            deployment consistency and reliability across environments.
-          </p>
-
-          <p>
-            Maintained 99.9% uptime by implementing proactive monitoring, alerting,
-            and observability strategies using CloudWatch, Grafana, and log-driven
-            diagnostic tooling.
-          </p>
-
-          <p>
-            Participated in 24×7 on-call rotations, performing production incident
-            triage, mitigation, and root cause analysis. Implemented long-term fixes
-            that improved platform stability and reduced recurrence of critical issues.
-          </p>
-
-          <p>
-            Led cost optimization and performance tuning initiatives, identifying
-            inefficient resource utilization patterns and implementing improvements
-            without compromising SLA targets.
-          </p>
-
-          <p>
-            Collaborated closely with engineering teams to improve deployment strategies,
-            operational workflows, and reliability best practices across cloud-native
-            services.
-          </p>
-
-        </div>
-      </div>
-
+    <div class="bg-slate-900 p-6 rounded-2xl card">
+      <h3 class="text-xl font-bold">Real-Time IoT Environmental Monitoring System</h3>
+      <p class="text-gray-400">Python • MQTT • InfluxDB • Grafana • Kafka</p>
+      <p class="mt-3 text-gray-300">
+        Designed an end-to-end IoT system for monitoring temperature, humidity, and gas levels with sub-second latency. Built ingestion pipelines using MQTT and Python, and optimized storage using InfluxDB retention strategies.
+        <br><br>
+        Implemented predictive analytics and anomaly detection, enabling real-time alerts and actionable insights. Reduced storage overhead by 40% while maintaining high query performance.
+      </p>
     </div>
-  </div>
-</section>
 
-<!-- ================= SKILLS ================= -->
+    <div class="bg-slate-900 p-6 rounded-2xl card">
+      <h3 class="text-xl font-bold">Driver Drowsiness Detection System (IEEE Published)</h3>
+      <p class="text-gray-400">Python • OpenCV • Dlib</p>
+      <p class="mt-3 text-gray-300">
+        Developed a real-time fatigue detection system using Eye Aspect Ratio (EAR) to identify drowsiness. Designed modular computer vision pipelines with robust performance across lighting conditions.
+        <br><br>
+        Achieved high detection reliability and minimized false positives through optimization and extensive testing.
+      </p>
+    </div>
 
-<section id="skills" class="py-24 px-6">
+    <div class="bg-slate-900 p-6 rounded-2xl card">
+      <h3 class="text-xl font-bold">COVID-19 Detection from Chest X-Ray</h3>
+      <p class="text-gray-400">Deep Learning • CNN • Transfer Learning</p>
+      <p class="mt-3 text-gray-300">
+        Built a deep learning model using CNN and transfer learning (VGG16) to classify chest X-rays. Achieved 95.5% accuracy and prioritized high recall to minimize missed diagnoses.
+        <br><br>
+        Automated predictions for 10,000+ images, reducing manual review workload by 70%.
+      </p>
+    </div>
 
-  <div class="max-w-5xl mx-auto">
-
-    <h2 class="font-heading font-bold text-4xl mb-12 text-center">
-      Skills & <span class="gradient-text">Expertise</span>
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <div class="card-hover rounded-3xl p-6"
-           style="background: var(--secondary-surface);">
-        AWS / Cloud Architecture<br>
-        Kubernetes / Docker<br>
-        Terraform / Ansible<br>
-        CI/CD / Jenkins / Git<br>
-        Monitoring / Grafana / CloudWatch
-      </div>
-
-      <div class="card-hover rounded-3xl p-6"
-           style="background: var(--secondary-surface);">
-        Incident Response<br>
-        Disaster Recovery<br>
-        Reliability Engineering<br>
-        Linux / Bash / Python
-      </div>
-
+    <div class="bg-slate-900 p-6 rounded-2xl card">
+      <h3 class="text-xl font-bold">Secure Instant Messenger (SIM)</h3>
+      <p class="text-gray-400">Sockets • Multi-threading • Web</p>
+      <p class="mt-3 text-gray-300">
+        Built a LAN-based chat application using socket programming and multi-threading, enabling real-time communication between multiple clients through a centralized server.
+      </p>
     </div>
 
   </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
-<section id="projects" class="py-24 px-6">
+<!-- CERTIFICATIONS -->
+<section class="max-w-5xl mx-auto p-6">
+  <h2 class="text-4xl font-bold mb-6">Certifications & Licenses</h2>
+  <div class="grid md:grid-cols-2 gap-4 text-gray-300">
+    <div class="bg-slate-900 p-4 rounded-xl">Databricks — Generative AI Fundamentals (2025)</div>
+    <div class="bg-slate-900 p-4 rounded-xl">AWS Cloud Practitioner Essentials</div>
+    <div class="bg-slate-900 p-4 rounded-xl">AWS Essential Training for Developers</div>
+    <div class="bg-slate-900 p-4 rounded-xl">Ethical Hacking: Hacking IoT Devices</div>
+    <div class="bg-slate-900 p-4 rounded-xl">Python Essential Training</div>
+    <div class="bg-slate-900 p-4 rounded-xl">Linux Server Management and Security</div>
+    <div class="bg-slate-900 p-4 rounded-xl">IBM Cloud Computing</div>
+    <div class="bg-slate-900 p-4 rounded-xl">HackerRank Python & Problem Solving</div>
+    <div class="bg-slate-900 p-4 rounded-xl">Microsoft MTA Python</div>
+  </div>
+</section>
 
-  <div class="max-w-6xl mx-auto">
-
-    <h2 class="font-heading font-bold text-4xl mb-16 text-center">
-      Featured <span class="gradient-text">Projects</span>
-    </h2>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-      <!-- Project 1 -->
-      <div class="card-hover rounded-3xl overflow-hidden"
-           style="background: var(--secondary-surface);">
-
-        <div class="h-40 flex items-center justify-center text-5xl"
-             style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
-          🚗
-        </div>
-
-        <div class="p-6 space-y-3 text-sm opacity-80 leading-relaxed">
-
-          <h3 class="font-heading font-bold text-lg">
-            Driver Drowsiness Detection and Alerting System
-          </h3>
-
-          <p class="opacity-60">
-            IEEE Published Research
-          </p>
-
-          <p>
-            Developed a real-time fatigue detection system leveraging computer vision
-            techniques and Eye Aspect Ratio (EAR) tracking to identify drowsiness events
-            with high accuracy and low latency.
-          </p>
-
-          <p>
-            Achieved 92% detection accuracy with alert triggering under 200 ms, ensuring
-            responsiveness suitable for safety-critical scenarios.
-          </p>
-
-          <p>
-            Implemented modular architecture, robust error handling, and performance
-            optimizations to maintain stability under varying environmental conditions.
-          </p>
-
-          <p>
-            Validated model behavior across diverse lighting and head-movement scenarios
-            to minimize false positives and improve real-world reliability.
-          </p>
-
-          <div class="pt-2 opacity-60 text-xs">
-            Python • OpenCV • Real-Time Processing • Computer Vision
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="card-hover rounded-3xl overflow-hidden"
-           style="background: var(--secondary-surface);">
-
-        <div class="h-40 flex items-center justify-center text-5xl"
-             style="background: linear-gradient(135deg, var(--secondary-action), var(--primary-action));">
-          🌎
-        </div>
-
-        <div class="p-6 space-y-3 text-sm opacity-80 leading-relaxed">
-
-          <h3 class="font-heading font-bold text-lg">
-            Real-Time IoT Environmental Monitoring System
-          </h3>
-
-          <p>
-            Designed and implemented an end-to-end telemetry pipeline for continuous
-            monitoring of gas concentration, temperature, and humidity sensors.
-          </p>
-
-          <p>
-            Built a secure MQTT → Python → InfluxDB ingestion pipeline capable of handling
-            high-frequency time-series data streams with sub-second telemetry updates.
-          </p>
-
-          <p>
-            Optimized retention policies and storage strategies to maintain long-term
-            historical visibility while keeping storage utilization efficient.
-          </p>
-
-          <p>
-            Developed Grafana dashboards with anomaly detection logic enabling rapid
-            identification of abnormal sensor behavior and environmental spikes.
-          </p>
-
-          <div class="pt-2 opacity-60 text-xs">
-            MQTT • Python • InfluxDB • Grafana • Time-Series Data
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="card-hover rounded-3xl overflow-hidden"
-           style="background: var(--secondary-surface);">
-
-        <div class="h-40 flex items-center justify-center text-5xl"
-             style="background: linear-gradient(135deg, var(--primary-action), var(--secondary-action));">
-          🩺
-        </div>
-
-        <div class="p-6 space-y-3 text-sm opacity-80 leading-relaxed">
-
-          <h3 class="font-heading font-bold text-lg">
-            COVID-19 Detection from Chest X-Ray Images
-          </h3>
-
-          <p>
-            Developed a deep learning pipeline using CNN and transfer learning
-            methodologies to classify chest X-ray images for COVID-19 detection.
-          </p>
-
-          <p>
-            Achieved 95.5% classification accuracy using VGG16 architecture while
-            prioritizing high recall to minimize false negative diagnoses.
-          </p>
-
-          <p>
-            Automated inference workflows supporting batch predictions across
-            10,000+ medical images, significantly reducing manual review effort.
-          </p>
-
-          <p>
-            Designed the model pipeline as a reusable inference module enabling
-            integration into future research or clinical validation systems.
-          </p>
-
-          <div class="pt-2 opacity-60 text-xs">
-            Python • CNN • VGG16 • Deep Learning • Medical Imaging
-          </div>
-
-        </div>
-      </div>
-
+<!-- EDUCATION -->
+<section class="max-w-5xl mx-auto p-6">
+  <h2 class="text-4xl font-bold mb-6">Education</h2>
+  <div class="space-y-4">
+    <div class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="font-bold">Rowan University</h3>
+      <p>Master of Science in Computer Science • GPA: 3.87</p>
+    </div>
+    <div class="bg-slate-900 p-6 rounded-xl">
+      <h3 class="font-bold">SRM Institute of Science and Technology</h3>
+      <p>Bachelor of Technology in Computer Science • GPA: 8.71</p>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="py-24 px-6">
-
-  <div class="max-w-4xl mx-auto text-center space-y-3">
-    <div>📧 mytreshravi26@gmail.com</div>
-    <div>📞 +1 (732)-799-8325</div>
-    <div>📍 New Jersey, United States</div>
-  </div>
-
+<!-- CONTACT -->
+<section class="text-center py-16">
+  <p>Email: mytreshravi26@gmail.com</p>
+  <p>Phone: +1 (732)-799-8325</p>
+  <p>Location: New Jersey, USA</p>
 </section>
 
-<footer class="py-10 text-center opacity-50">
-  © 2026 Mytresh Ravi — DevOps • Site Reliability • Cloud Engineering
+<footer class="text-center py-6 text-gray-500">
+  © 2026 Mytresh Ravi — Software Engineer Portfolio
 </footer>
-
-<script>
-const config = {
-  background_color: '#0f0f1a',
-  surface_color: '#1a1a2e',
-  text_color: '#f0f0f5',
-  primary_action_color: '#6366f1',
-  secondary_action_color: '#ec4899'
-};
-
-document.documentElement.style.setProperty('--background', config.background_color);
-document.documentElement.style.setProperty('--secondary-surface', config.surface_color);
-document.documentElement.style.setProperty('--text', config.text_color);
-document.documentElement.style.setProperty('--primary-action', config.primary_action_color);
-document.documentElement.style.setProperty('--secondary-action', config.secondary_action_color);
-</script>
 
 </body>
 </html>
