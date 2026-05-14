@@ -673,9 +673,11 @@ html.no-fx .dicon{will-change:auto;}
   background:#050508;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   overflow:hidden;
-  transition:opacity 0.8s ease,transform 0.8s ease;
 }
-#splash.exiting{opacity:0;transform:scale(1.04);pointer-events:none;}
+#splash.exiting{
+  animation:splashExit 0.7s ease forwards;
+}
+@keyframes splashExit{to{opacity:0;transform:scale(1.04);}}
 
 .splash-aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
 .splash-blob{
@@ -685,29 +687,25 @@ html.no-fx .dicon{will-change:auto;}
 .splash-blob:nth-child(1){width:620px;height:620px;background:radial-gradient(circle,#0a84ff,transparent 70%);top:-120px;left:-180px;animation-delay:0s;}
 .splash-blob:nth-child(2){width:520px;height:520px;background:radial-gradient(circle,#5e5ce6,transparent 70%);bottom:-90px;right:-120px;animation-delay:-5s;}
 .splash-blob:nth-child(3){width:380px;height:380px;background:radial-gradient(circle,#30d158,transparent 70%);top:45%;left:52%;animation-delay:-9s;}
-@keyframes blobDrift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,-50px) scale(1.1);}}
+@keyframes blobDrift{0%{transform:translate(0,0)scale(1);}100%{transform:translate(50px,-50px)scale(1.1);}}
 
 .splash-stars{position:absolute;inset:0;pointer-events:none;}
 .splash-stars::before{
   content:'';position:absolute;inset:0;
   background-image:
-    radial-gradient(1px 1px at 12% 18%,rgba(255,255,255,0.45),transparent),
-    radial-gradient(1px 1px at 32% 62%,rgba(255,255,255,0.3),transparent),
-    radial-gradient(1.5px 1.5px at 58% 14%,rgba(255,255,255,0.5),transparent),
-    radial-gradient(1px 1px at 72% 47%,rgba(255,255,255,0.25),transparent),
-    radial-gradient(1px 1px at 88% 78%,rgba(255,255,255,0.35),transparent),
-    radial-gradient(1px 1px at 22% 88%,rgba(255,255,255,0.28),transparent),
-    radial-gradient(1px 1px at 91% 11%,rgba(255,255,255,0.4),transparent),
-    radial-gradient(1px 1px at 47% 72%,rgba(255,255,255,0.2),transparent),
-    radial-gradient(1px 1px at 66% 93%,rgba(255,255,255,0.32),transparent),
-    radial-gradient(1px 1px at 6%  52%,rgba(255,255,255,0.28),transparent),
-    radial-gradient(1px 1px at 40% 35%,rgba(255,255,255,0.22),transparent),
-    radial-gradient(1px 1px at 79% 60%,rgba(255,255,255,0.18),transparent);
-  animation:starTwinkle 5s ease-in-out infinite alternate;
+    radial-gradient(1px 1px at 12% 18%,rgba(255,255,255,.45),transparent),
+    radial-gradient(1px 1px at 32% 62%,rgba(255,255,255,.3),transparent),
+    radial-gradient(1.5px 1.5px at 58% 14%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1px 1px at 72% 47%,rgba(255,255,255,.25),transparent),
+    radial-gradient(1px 1px at 88% 78%,rgba(255,255,255,.35),transparent),
+    radial-gradient(1px 1px at 22% 88%,rgba(255,255,255,.28),transparent),
+    radial-gradient(1px 1px at 91% 11%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1px 1px at 47% 72%,rgba(255,255,255,.2),transparent),
+    radial-gradient(1px 1px at 66% 93%,rgba(255,255,255,.32),transparent),
+    radial-gradient(1px 1px at 40% 35%,rgba(255,255,255,.22),transparent);
 }
-@keyframes starTwinkle{0%{opacity:.7;}100%{opacity:1;}}
 
-/* Splash content — visible by default, animated as enhancement */
+/* ── Content always visible — animations are pure enhancement ── */
 .splash-question{
   font-family:'Playfair Display',Georgia,serif;
   font-size:clamp(20px,3.8vw,42px);
@@ -716,21 +714,11 @@ html.no-fx .dicon{will-change:auto;}
   letter-spacing:-0.4px;line-height:1.25;
   position:relative;z-index:2;
   text-shadow:0 2px 30px rgba(10,132,255,0.18);
-  opacity:0;transform:translateY(-16px);
 }
-.splash-question.splash-ready{
-  animation:splashUp 0.9s cubic-bezier(.22,.68,0,1.2) forwards;
-}
-@keyframes splashUp{to{opacity:1;transform:translateY(0);}}
-
 .splash-card{
   display:flex;flex-direction:column;align-items:center;gap:14px;
   cursor:pointer;position:relative;z-index:2;
   user-select:none;
-  opacity:0;transform:translateY(22px) scale(0.95);
-}
-.splash-card.splash-ready{
-  animation:splashUp 0.9s cubic-bezier(.22,.68,0,1.2) 0.2s forwards;
 }
 .splash-photo-wrap{
   width:148px;height:148px;border-radius:50%;overflow:hidden;
@@ -745,34 +733,21 @@ html.no-fx .dicon{will-change:auto;}
 }
 .splash-card:active .splash-photo-wrap{transform:scale(0.97);}
 .splash-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-
 .splash-name{
   font-family:'Space Mono',monospace;font-size:13px;
   color:rgba(245,245,247,0.7);letter-spacing:3px;text-transform:uppercase;
   transition:all 0.3s ease;
 }
 .splash-card:hover .splash-name{color:#fff;letter-spacing:4px;}
-
 .splash-hint{
   position:absolute;bottom:36px;left:0;right:0;text-align:center;
   font-size:11px;font-family:'Space Mono',monospace;
   color:rgba(235,235,245,0.28);letter-spacing:0.05em;
-  opacity:0;z-index:2;
-}
-.splash-hint.splash-ready{
-  animation:splashUp 0.8s ease 0.4s forwards;
+  z-index:2;
 }
 
-/* Fallback: if JS adds splash-show class directly (no-fx path) */
-.splash-question.splash-show,
-.splash-card.splash-show,
-.splash-hint.splash-show{
-  opacity:1 !important;transform:none !important;animation:none !important;
-}
-
-/* ═══ DESKTOP + TASKBAR ENTRY ═══ */
-#desktop,#taskbar{transition:opacity 0.65s ease;}
-#desktop.hidden,#taskbar.hidden{opacity:0;pointer-events:none;}
+/* ═══ DESKTOP hidden until splash dismissed ═══ */
+#desktop.pre-hide,#taskbar.pre-hide{display:none;}
 
 /* ═══ PHOTO LIGHTBOX ═══ */
 #photo-lightbox{
@@ -780,16 +755,13 @@ html.no-fx .dicon{will-change:auto;}
   background:rgba(0,0,0,0.88);backdrop-filter:blur(12px);
   display:none;align-items:center;justify-content:center;cursor:zoom-out;
 }
-#photo-lightbox.visible{display:flex;animation:lbIn 0.25s ease;}
-@keyframes lbIn{from{opacity:0;}to{opacity:1;}}
+#photo-lightbox.visible{display:flex;}
 #photo-lightbox img{
   max-width:min(420px,88vw);max-height:82vh;
   border-radius:50%;border:3px solid rgba(10,132,255,0.5);
   box-shadow:0 0 0 8px rgba(10,132,255,0.1),0 40px 100px rgba(0,0,0,0.7);
   object-fit:cover;object-position:center top;
-  animation:lbPop 0.3s cubic-bezier(.22,.68,0,1.2);
 }
-@keyframes lbPop{from{transform:scale(0.88);}to{transform:scale(1);}}
 .lb-close{
   position:fixed;top:22px;right:26px;font-size:30px;
   color:rgba(255,255,255,0.45);cursor:pointer;z-index:1;line-height:1;
@@ -801,15 +773,11 @@ html.no-fx .dicon{will-change:auto;}
 .about-avatar{
   width:72px;height:72px;border-radius:50% !important;overflow:hidden;
   border:2px solid var(--accent);flex-shrink:0;cursor:zoom-in;
-  transition:all 0.25s ease;
-  animation:avatarGlow 3s ease-in-out infinite;
+  transition:transform 0.25s ease,border-color 0.25s ease,box-shadow 0.25s ease;
+  box-shadow:0 0 0 2px rgba(10,132,255,0.18);
 }
 .about-avatar:hover{transform:scale(1.06);border-color:var(--accent2);box-shadow:0 6px 24px rgba(10,132,255,0.35);}
 .about-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-@keyframes avatarGlow{
-  0%,100%{box-shadow:0 0 0 2px rgba(10,132,255,0.18);}
-  50%{box-shadow:0 0 0 4px rgba(10,132,255,0.45),0 0 18px rgba(10,132,255,0.18);}
-}
 
 </style>
 </head>
@@ -822,14 +790,14 @@ html.no-fx .dicon{will-change:auto;}
     <div class="splash-blob"></div>
   </div>
   <div class="splash-stars"></div>
-  <div class="splash-question" id="splash-q">Do you want to see my portfolio?</div>
-  <div class="splash-card" id="splash-card" onclick="enterPortfolio()">
+  <div class="splash-question">Do you want to see my portfolio?</div>
+  <div class="splash-card" onclick="enterPortfolio()">
     <div class="splash-photo-wrap">
       <img src="mytresh.jpg" alt="Mytresh Ravi"/>
     </div>
     <span class="splash-name">Mytresh</span>
   </div>
-  <div class="splash-hint" id="splash-hint">Recruiter? Hiring Manager? Curious dev? — <span style="color:rgba(235,235,245,0.52);">Click the card to continue</span></div>
+  <div class="splash-hint">Recruiter? Hiring Manager? Curious dev? — <span style="color:rgba(235,235,245,0.52)">Click the card to continue</span></div>
 </div>
 
 <div id="photo-lightbox" onclick="closeLightbox()">
@@ -838,7 +806,7 @@ html.no-fx .dicon{will-change:auto;}
 </div>
 
 
-<div id="desktop" class="hidden">
+<div id="desktop" class="pre-hide">
   <div class="wallpaper-stack" aria-hidden="true">
     <div class="wp-layer"></div>
     <div class="wp-layer"></div>
@@ -1558,7 +1526,7 @@ html.no-fx .dicon{will-change:auto;}
 </div>
 
 <!-- TASKBAR -->
-<div id="taskbar" class="hidden">
+<div id="taskbar" class="pre-hide">
   <div class="tb-wrap-logo">
     <span class="tb-logo" id="tb-logo-btn" title="Start">MR.OS</span>
   </div>
@@ -2247,34 +2215,16 @@ document.getElementById('desktop').addEventListener('click',e=>{
 });
 
 
-/* ── Splash: use JS-driven reveal so no-fx mode can't block it ── */
-(function(){
-  var noFx = document.documentElement.classList.contains('no-fx')
-          || localStorage.getItem('mr-fx') === 'off';
-  var q    = document.getElementById('splash-q');
-  var card = document.getElementById('splash-card');
-  var hint = document.getElementById('splash-hint');
-  if(noFx){
-    /* Instant show — bypass animations entirely */
-    [q, card, hint].forEach(function(el){ if(el) el.classList.add('splash-show'); });
-  } else {
-    /* Staggered CSS animation reveal */
-    setTimeout(function(){ if(q)    q.classList.add('splash-ready');    }, 50);
-    setTimeout(function(){ if(card) card.classList.add('splash-ready'); }, 250);
-    setTimeout(function(){ if(hint) hint.classList.add('splash-ready'); }, 600);
-  }
-})();
-
 function enterPortfolio(){
-  var splash   = document.getElementById('splash');
-  var desktop  = document.getElementById('desktop');
-  var taskbar  = document.getElementById('taskbar');
+  var splash  = document.getElementById('splash');
+  var desktop = document.getElementById('desktop');
+  var taskbar = document.getElementById('taskbar');
   splash.classList.add('exiting');
   setTimeout(function(){
-    desktop.classList.remove('hidden');
-    taskbar.classList.remove('hidden');
-    setTimeout(function(){ splash.style.display='none'; }, 100);
-  }, 650);
+    splash.style.display = 'none';
+    desktop.classList.remove('pre-hide');
+    taskbar.classList.remove('pre-hide');
+  }, 680);
 }
 function openLightbox(){
   document.getElementById('photo-lightbox').classList.add('visible');
@@ -2283,7 +2233,7 @@ function closeLightbox(){
   document.getElementById('photo-lightbox').classList.remove('visible');
 }
 document.addEventListener('keydown', function(e){
-  if(e.key==='Escape') closeLightbox();
+  if(e.key === 'Escape') closeLightbox();
 });
 
 loadTheme();
