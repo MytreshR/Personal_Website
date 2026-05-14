@@ -707,25 +707,30 @@ html.no-fx .dicon{will-change:auto;}
 }
 @keyframes starTwinkle{0%{opacity:.7;}100%{opacity:1;}}
 
+/* Splash content — visible by default, animated as enhancement */
 .splash-question{
   font-family:'Playfair Display',Georgia,serif;
   font-size:clamp(20px,3.8vw,42px);
   font-weight:700;color:#f5f5f7;
   text-align:center;margin-bottom:40px;
   letter-spacing:-0.4px;line-height:1.25;
-  opacity:0;transform:translateY(-16px);
-  animation:splashUp 0.9s cubic-bezier(.22,.68,0,1.2) 0.3s forwards;
   position:relative;z-index:2;
   text-shadow:0 2px 30px rgba(10,132,255,0.18);
+  opacity:0;transform:translateY(-16px);
+}
+.splash-question.splash-ready{
+  animation:splashUp 0.9s cubic-bezier(.22,.68,0,1.2) forwards;
 }
 @keyframes splashUp{to{opacity:1;transform:translateY(0);}}
 
 .splash-card{
   display:flex;flex-direction:column;align-items:center;gap:14px;
   cursor:pointer;position:relative;z-index:2;
-  opacity:0;transform:translateY(22px) scale(0.95);
-  animation:splashUp 0.9s cubic-bezier(.22,.68,0,1.2) 0.55s forwards;
   user-select:none;
+  opacity:0;transform:translateY(22px) scale(0.95);
+}
+.splash-card.splash-ready{
+  animation:splashUp 0.9s cubic-bezier(.22,.68,0,1.2) 0.2s forwards;
 }
 .splash-photo-wrap{
   width:148px;height:148px;border-radius:50%;overflow:hidden;
@@ -735,7 +740,7 @@ html.no-fx .dicon{will-change:auto;}
 }
 .splash-card:hover .splash-photo-wrap{
   transform:translateY(-7px) scale(1.04);
-  box-shadow:0 0 0 8px rgba(10,132,255,0.14),0 30px 80px rgba(10,132,255,0.3),0 0 60px rgba(10,132,255,0.12);
+  box-shadow:0 0 0 8px rgba(10,132,255,0.14),0 30px 80px rgba(10,132,255,0.3);
   border-color:rgba(10,132,255,0.7);
 }
 .splash-card:active .splash-photo-wrap{transform:scale(0.97);}
@@ -752,9 +757,18 @@ html.no-fx .dicon{will-change:auto;}
   position:absolute;bottom:36px;left:0;right:0;text-align:center;
   font-size:11px;font-family:'Space Mono',monospace;
   color:rgba(235,235,245,0.28);letter-spacing:0.05em;
-  opacity:0;animation:splashUp 0.8s ease 1.3s forwards;z-index:2;
+  opacity:0;z-index:2;
 }
-.splash-hint span{color:rgba(235,235,245,0.52);}
+.splash-hint.splash-ready{
+  animation:splashUp 0.8s ease 0.4s forwards;
+}
+
+/* Fallback: if JS adds splash-show class directly (no-fx path) */
+.splash-question.splash-show,
+.splash-card.splash-show,
+.splash-hint.splash-show{
+  opacity:1 !important;transform:none !important;animation:none !important;
+}
 
 /* ═══ DESKTOP + TASKBAR ENTRY ═══ */
 #desktop,#taskbar{transition:opacity 0.65s ease;}
@@ -808,14 +822,14 @@ html.no-fx .dicon{will-change:auto;}
     <div class="splash-blob"></div>
   </div>
   <div class="splash-stars"></div>
-  <div class="splash-question">Do you want to see my portfolio?</div>
-  <div class="splash-card" onclick="enterPortfolio()">
+  <div class="splash-question" id="splash-q">Do you want to see my portfolio?</div>
+  <div class="splash-card" id="splash-card" onclick="enterPortfolio()">
     <div class="splash-photo-wrap">
       <img src="mytresh.jpg" alt="Mytresh Ravi"/>
     </div>
     <span class="splash-name">Mytresh</span>
   </div>
-  <div class="splash-hint">Recruiter? Hiring Manager? Curious dev? — <span>Click the card to continue</span></div>
+  <div class="splash-hint" id="splash-hint">Recruiter? Hiring Manager? Curious dev? — <span style="color:rgba(235,235,245,0.52);">Click the card to continue</span></div>
 </div>
 
 <div id="photo-lightbox" onclick="closeLightbox()">
@@ -2233,16 +2247,34 @@ document.getElementById('desktop').addEventListener('click',e=>{
 });
 
 
+/* ── Splash: use JS-driven reveal so no-fx mode can't block it ── */
+(function(){
+  var noFx = document.documentElement.classList.contains('no-fx')
+          || localStorage.getItem('mr-fx') === 'off';
+  var q    = document.getElementById('splash-q');
+  var card = document.getElementById('splash-card');
+  var hint = document.getElementById('splash-hint');
+  if(noFx){
+    /* Instant show — bypass animations entirely */
+    [q, card, hint].forEach(function(el){ if(el) el.classList.add('splash-show'); });
+  } else {
+    /* Staggered CSS animation reveal */
+    setTimeout(function(){ if(q)    q.classList.add('splash-ready');    }, 50);
+    setTimeout(function(){ if(card) card.classList.add('splash-ready'); }, 250);
+    setTimeout(function(){ if(hint) hint.classList.add('splash-ready'); }, 600);
+  }
+})();
+
 function enterPortfolio(){
-  const splash=document.getElementById('splash');
-  const desktop=document.getElementById('desktop');
-  const taskbar=document.getElementById('taskbar');
+  var splash   = document.getElementById('splash');
+  var desktop  = document.getElementById('desktop');
+  var taskbar  = document.getElementById('taskbar');
   splash.classList.add('exiting');
-  setTimeout(()=>{
+  setTimeout(function(){
     desktop.classList.remove('hidden');
     taskbar.classList.remove('hidden');
-    setTimeout(()=>{ splash.style.display='none'; },100);
-  },650);
+    setTimeout(function(){ splash.style.display='none'; }, 100);
+  }, 650);
 }
 function openLightbox(){
   document.getElementById('photo-lightbox').classList.add('visible');
@@ -2250,7 +2282,7 @@ function openLightbox(){
 function closeLightbox(){
   document.getElementById('photo-lightbox').classList.remove('visible');
 }
-document.addEventListener('keydown',e=>{
+document.addEventListener('keydown', function(e){
   if(e.key==='Escape') closeLightbox();
 });
 
