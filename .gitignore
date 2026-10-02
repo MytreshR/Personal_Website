@@ -1,0 +1,9 @@
+# Local tooling / preview artifacts
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Azure Functions local secrets — never commit
+api/local.settings.json
